@@ -15,22 +15,8 @@ export default event({
     if (!channel) return;
 
     await member.fetch();
-    channel.send(`hellllloooo ${member.displayName}`);
-
-    // TODO run a slash command if available :)
-    // update: looks like bots can't run slash commands :(
-
-    // run the glif ourselves
-    // const response = await runGlif(id, [input]);
+    // await user.fetch();
+    // await reaction.fetch();
     await runWelcomeGlifAndPostToChannel(member.user, channel);
-
-    // channel.send({
-    //   content: member.toString(),
-    //   embeds: [
-    //     new EmbedBuilder()
-    //       .setDescription(getMessage(member.user, joinMessages))
-    //       .setColor("#7de062"),
-    //   ],
-    // });
   },
 });

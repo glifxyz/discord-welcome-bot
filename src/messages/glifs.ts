@@ -10,6 +10,8 @@ import {
   PrivateThreadChannel,
   EmbedBuilder,
 } from "discord.js";
+import { getMessage } from "./util";
+import { joinMessages } from "./messages";
 import wretch from "wretch";
 
 const firstElementIfArray = (value: unknown) => {
@@ -27,6 +29,18 @@ export async function runWelcomeGlifAndPostToChannel(
     | PublicThreadChannel
     | PrivateThreadChannel
 ) {
+  // first message - simple welcome
+  // channel.send({ content: `Welcome ${user.username}! stand by...` });
+  const text = getMessage(user, joinMessages);
+  const welcome1 = new EmbedBuilder()
+    .setTitle(`welcome <@${user.id}>`)
+    .setDescription(text);
+  // channel.send({ embeds: [welcome1] });
+  channel.send(
+    `welcome <@${user.id}>! making you something with glif, hold on...`
+  );
+
+  // second message - with glif image
   // Insane Welcome Mesage https://glif.app/@fab1an/glifs/cllkjq2jh0006mf0f3evcdjmm
   const glifId = "cllkjq2jh0006mf0f3evcdjmm";
 
@@ -48,9 +62,12 @@ export async function runWelcomeGlifAndPostToChannel(
   //   embeds: embeds,
   // });
 
+  await user.fetch();
+
   const embed = new EmbedBuilder()
-    .setTitle("welcome!")
+    // .setTitle(getMessage(user, joinMessages))
     // .setDescription('This is a description.')
+    .setDescription(text)
     .setColor("#0099ff")
     .setImage(output);
   channel.send({ embeds: [embed] });

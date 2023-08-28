@@ -1,8 +1,9 @@
-import type { Guild, User } from "discord.js";
+import type { Guild, User, PartialUser } from "discord.js";
 
-export const getMessage = (user: User, messages: string[]) => {
+export const getMessage = (user: User | PartialUser, messages: string[]) => {
   const message = messages[Math.floor(Math.random() * messages.length)];
-  return message.replace(/{USER}/gm, `\`${user.username}\``);
+  // return message.replace(/{USER}/gm, `\`${user.username}\``);
+  return message.replace(/{USER}/gm, `${user.username}`);
 };
 
 export const getChannel = async (guild: Guild) => {
