@@ -1,20 +1,37 @@
-# Create JellyCommands
+# glifConcierge
 
-This project was created with `npm create jellycommands`!
+Friendly host bot for the glif.app Discord server - join here: <https://glif.app/discord>
 
-# Get Started
+This project was created with [JellyCommands](https://jellycommands.dev/)
 
-You need to make sure you have your `.env` file, this is where you will put your discord bot token. You can see how that should look from the `.env.example` file.
+## Install this bot
 
-```bash
+<https://discord.com/api/oauth2/authorize?client_id=1145632354442940448&permissions=2147745856&scope=bot%20applications.commands>
+
+## Development
+
+We are using `pnpm` rather than npm or yarn.
+
+Copy the example `.env` and put your Discord bot token in the:
+
+```sh
 cp .env.example .env
 ```
 
-# Commands
+Then in development:
 
-`npm run <command>`
+```sh
+pnpm run dev
+```
 
-| Command | Description                                            |
-|---------|--------------------------------------------------------|
-| dev     | You can use this command when developing your bot      |
-| start   | When you host/run your bot you should use this command |
+In a production deployment:
+
+```sh
+pnpm run start
+```
+
+## Helpful docs
+
+Full list of Discord.js events and their parameters: <https://old.discordjs.dev/#/docs/discord.js/14.13.0/class/Client?scrollTo=e-guildMemberAdd>
+
+JellyCommands docs - helper layer + boilerplate on top of discord.js: <https://jellycommands.dev/guide/commands/slash.html>
