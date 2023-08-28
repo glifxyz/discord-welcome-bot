@@ -1,10 +1,11 @@
 // * Don't delete me!!!
 // * If you have questions, ask in The Dev Lounge Discord
 // * https://discord.com/invite/2Vd4wAjJnm
-
 {
     "compilerOptions": {
-        "lib": ["ESNext"],
+        "lib": [
+            "ESNext"
+        ],
         "module": "ESNext",
         "target": "ESNext",
         "esModuleInterop": true,
@@ -15,5 +16,8 @@
         "checkJs": true,
         "allowJs": true
     },
-    "include": ["./src/**/*.js", "./src/**/*.ts"],
+    "include": [
+        "./src/**/*.js",
+        "./src/**/*.ts"
+    ],
 }
