@@ -67,7 +67,7 @@ export async function runWelcomeGlifAndPostToChannel(
   const embed = new EmbedBuilder()
     // .setTitle(getMessage(user, joinMessages))
     // .setDescription('This is a description.')
-    .setDescription(text)
+    // .setDescription(text)
     .setColor("#0099ff")
     .setImage(output);
   channel.send({ embeds: [embed] });

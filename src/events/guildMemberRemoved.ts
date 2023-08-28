@@ -19,7 +19,7 @@ export default event({
     const channel = await getChannel(member.guild);
     if (!channel) return;
 
-    channel.send(`lol bye ${member.displayName}`);
+    // channel.send(`lol bye ${member.displayName}`);
     // channel.send({
     //   embeds: [
     //     new EmbedBuilder()

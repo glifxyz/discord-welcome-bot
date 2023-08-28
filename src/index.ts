@@ -41,7 +41,7 @@ const client = new JellyCommands({
   },
 
   // print bonus debugging
-  debug: true,
+  // debug: true,
 });
 
 // Automatically reads the DISCORD_TOKEN environment variable
