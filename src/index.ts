@@ -1,6 +1,6 @@
 import "dotenv/config";
 import { JellyCommands } from "jellycommands";
-import { IntentsBitField } from "discord.js";
+import { IntentsBitField, Partials } from "discord.js";
 
 const client = new JellyCommands({
   // https://jellycommands.dev/guide/commands/loading
@@ -15,9 +15,17 @@ const client = new JellyCommands({
   clientOptions: {
     intents: [
       IntentsBitField.Flags.Guilds,
-      IntentsBitField.Flags.GuildMessageReactions,
       IntentsBitField.Flags.GuildMembers,
+      IntentsBitField.Flags.GuildMessages,
+      IntentsBitField.Flags.GuildMessageReactions,
       // IntentsBitField.Flags.GuildPresences
+      // IntentsBitField.Flags.MessageContent,
+    ],
+    partials: [
+      Partials.Channel,
+      Partials.GuildMember,
+      Partials.Message,
+      Partials.Reaction,
     ],
   },
 
@@ -29,6 +37,9 @@ const client = new JellyCommands({
       "668113742265057300", // memeresearchlab
     ],
   },
+
+  // print bonus debugging
+  debug: true,
 });
 
 // Automatically reads the DISCORD_TOKEN environment variable
