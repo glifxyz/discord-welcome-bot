@@ -2,6 +2,10 @@ import "dotenv/config";
 import { JellyCommands } from "jellycommands";
 import { IntentsBitField, Partials } from "discord.js";
 
+if (!process.env.GUILD_ID) throw new Error("missing GUILD_ID");
+if (!process.env.WELCOME_CHANNEL_ID)
+  throw new Error("missing WELCOME_CHANNEL_ID");
+
 const client = new JellyCommands({
   // https://jellycommands.dev/guide/commands/loading
   commands: "src/commands",
@@ -33,9 +37,7 @@ const client = new JellyCommands({
   // https://jellycommands.dev/guide/commands/dev#global-dev-mode
   dev: {
     global: true,
-    guilds: [
-      "668113742265057300", // memeresearchlab
-    ],
+    guilds: [process.env.GUILD_ID],
   },
 
   // print bonus debugging
