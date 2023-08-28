@@ -37,7 +37,7 @@ export async function runWelcomeGlifAndPostToChannel(
     .setDescription(text);
   // channel.send({ embeds: [welcome1] });
   channel.send(
-    `welcome <@${user.id}>! making you something with glif, hold on...`
+    `welcome <@${user.id}>! making you something with the \`/glif\` command, hold on...`
   );
 
   // second message - with glif image
