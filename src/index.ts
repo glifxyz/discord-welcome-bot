@@ -8,13 +8,13 @@ if (!process.env.WELCOME_CHANNEL_ID)
 
 const client = new JellyCommands({
   // https://jellycommands.dev/guide/commands/loading
-  commands: "src/commands",
+  // commands: "src/commands",
 
   // https://jellycommands.dev/guide/events/loading
   events: "src/events",
 
   // https://jellycommands.dev/guide/buttons/loading
-  buttons: "src/buttons",
+  // buttons: "src/buttons",
 
   clientOptions: {
     intents: [
