@@ -41,11 +41,10 @@ export async function runWelcomeGlifAndPostToChannel(
   );
 
   // second message - with glif image
-  // Insane Welcome Mesage https://glif.app/@fab1an/glifs/cllkjq2jh0006mf0f3evcdjmm
-  const glifId = "cllkjq2jh0006mf0f3evcdjmm";
-
+  // v1: Insane Welcome Mesage https://glif.app/@fab1an/glifs/cllkjq2jh0006mf0f3evcdjmm
+  // v2: Insaner Welcome Welcome by @snuts https://glif.app/@snuts/glifs/clmqn32i50007l70fynzaualh
+  const glifId = "clmqn32i50007l70fynzaualh";
   const inputs = [user.username];
-
   console.log("runGlif", { glifId, inputs });
   const response: any = await wretch(`https://simple-api.glif.app/${glifId}`)
     .post({ inputs })
