@@ -14,7 +14,7 @@ export default event({
   name: "guildMemberRemove",
 
   async run(_, member) {
-    console.log("guildMemberRemove", member);
+    console.log("guildMemberRemove", member?.user?.username);
 
     const channel = await getChannel(member.guild);
     if (!channel) return;
