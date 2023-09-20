@@ -29,6 +29,8 @@ export async function runWelcomeGlifAndPostToChannel(
     | PublicThreadChannel
     | PrivateThreadChannel
 ) {
+  const glifId = "clmqn32i50007l70fynzaualh";
+
   // first message - simple welcome
   // channel.send({ content: `Welcome ${user.username}! stand by...` });
   const text = getMessage(user, joinMessages);
@@ -37,13 +39,13 @@ export async function runWelcomeGlifAndPostToChannel(
     .setDescription(text);
   // channel.send({ embeds: [welcome1] });
   channel.send(
-    `welcome <@${user.id}>! making you something with the \`/glif\` command, hold on...`
+    `welcome <@${user.id}>! making you something with the \`/glif\` command, hold on...
+using **Insaner Welcome Message** by @snuts <https://glif.app/@snuts/glifs/clmqn32i50007l70fynzaualh>`
   );
 
   // second message - with glif image
   // v1: Insane Welcome Mesage https://glif.app/@fab1an/glifs/cllkjq2jh0006mf0f3evcdjmm
   // v2: Insaner Welcome Welcome by @snuts https://glif.app/@snuts/glifs/clmqn32i50007l70fynzaualh
-  const glifId = "clmqn32i50007l70fynzaualh";
   const inputs = [user.username];
   console.log("runGlif", { glifId, inputs });
   const response: any = await wretch(`https://simple-api.glif.app/${glifId}`)

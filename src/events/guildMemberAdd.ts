@@ -10,7 +10,11 @@ export default event({
 
   async run(_, member) {
     // console.log("guildMemberAdd", member);
-    console.log("guildMemberAdd", member.user);
+    console.log("guildMemberAdd", member?.user?.username);
+    if (!member?.user) {
+      console.error("missing user");
+      return;
+    }
 
     const channel = await getChannel(member.guild);
     if (!channel) return;
