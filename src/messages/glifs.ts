@@ -29,7 +29,7 @@ export async function runWelcomeGlifAndPostToChannel(
     | PublicThreadChannel
     | PrivateThreadChannel
 ) {
-  const glifId = "clmqn32i50007l70fynzaualh";
+  const glifId = "clq0nz7880000yo2oeo5zo4n7";
 
   // first message - simple welcome
   // channel.send({ content: `Welcome ${user.username}! stand by...` });
