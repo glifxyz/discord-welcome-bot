@@ -40,9 +40,10 @@ export async function runWelcomeGlifAndPostToChannel(
     .setTitle(`welcome <@${user.id}>`)
     .setDescription(text);
   // channel.send({ embeds: [welcome1] });
+  const glifInfo = `running **Discord Welcome Message** by @snuts & @fab1an <https://glif.app/glifs/${glifId}>`
   channel.send(
     `welcome <@${user.id}>! making you something with the \`/glif\` command, hold on...
-using **Insaner Welcome Message** by @snuts <https://glif.app/@snuts/glifs/clmqn32i50007l70fynzaualh>`
+using ${glifInfo}
   );
 
   // second message - with glif image
