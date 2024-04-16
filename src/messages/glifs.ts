@@ -29,6 +29,8 @@ export async function runWelcomeGlifAndPostToChannel(
     | PublicThreadChannel
     | PrivateThreadChannel
 ) {
+  if(!process.env.GLIF_API_TOKEN) throw new Error("missing GLIF_API_TOKEN");
+
   const glifId = "clq0nz7880000yo2oeo5zo4n7";
 
   // first message - simple welcome
@@ -49,6 +51,7 @@ using **Insaner Welcome Message** by @snuts <https://glif.app/@snuts/glifs/clmqn
   const inputs = [user.username];
   console.log("runGlif", { glifId, inputs });
   const response: any = await wretch(`https://simple-api.glif.app/${glifId}`)
+    .auth(`Bearer ${process.env.GLIF_API_TOKEN}`)
     .post({ inputs })
     .json();
   console.log("runGlif response =>", response);
