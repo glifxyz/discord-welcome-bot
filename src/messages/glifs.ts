@@ -43,7 +43,7 @@ export async function runWelcomeGlifAndPostToChannel(
   const glifInfo = `running **Discord Welcome Message** by @snuts & @fab1an <https://glif.app/glifs/${glifId}>`
   channel.send(
     `welcome <@${user.id}>! making you something with the \`/glif\` command, hold on...
-using ${glifInfo}`
+${glifInfo}`
   );
 
   // second message - with glif image
