@@ -4,6 +4,11 @@ Friendly host bot for the glif.app Discord server - join here: <https://glif.app
 
 This project was created with [JellyCommands](https://jellycommands.dev/)
 
+The randomly-generated intro message looks something like this:
+
+![CleanShot 2024-09-11 at 13 38 02@2x](https://github.com/user-attachments/assets/64dbe94e-587b-4666-a601-d08e6419f5ad)
+
+
 ## Install this bot
 
 <https://discord.com/api/oauth2/authorize?client_id=1145632354442940448&permissions=2147745856&scope=bot%20applications.commands>
